@@ -1,0 +1,10 @@
+highlighter: rouge
+github: [Repository metadata]
+
+baseurl: "https://kristenzirkler.github.io/tatum-psychiatry-site"
+
+# Sass
+sass:
+  sass_dir: scss
+  style: :compressed
+  line_numbers: true
