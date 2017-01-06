@@ -1,29 +1,16 @@
 // Main JS File Unminified 
 $(function(){
 
-	// Mobile Nav
-	$('.mobile-toggle').click(function(event) {
-	    event.preventDefault();
-		$('.nav').toggleClass('nav-open');
-	});
+  // fade in
+  $(document).ready(function(){
+    $('.container').addClass('show');
 
-  /*
-   * Video Player Modal
-   * 
-   * 
-  */
-  $('a[rel="videoPlayerToggle"]').click(function(event) {
+    var username = 'info',
+      hostname = 'tatumpsyciatry.com', 
+      linktext = username + '@' + hostname;
 
-    event.preventDefault();
-    var videoID = $(this).attr('data-videoID');
-   
-    $('#videoPlayerContainer iframe').attr('src','//www.youtube.com/embed/'+videoID+'?autoplay=1&autohide=1&modestbranding=1&rel=0&showinfo=0');
-    $('#videoPlayerContainer').show('slow');
-    
-  });
-  $('#videoPlayerContainer').click(function() {
-    $('#videoPlayerContainer').hide('fast');
-    $('#videoPlayerContainer iframe').attr('src','');
+    $('#contact-email').html('<a href="mailto:' + linktext + '">' + linktext + '</a>');
+
   });
 
 

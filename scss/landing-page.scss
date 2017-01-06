@@ -1,0 +1,168 @@
+$content-width: 420px;
+$content-height: 350px;
+
+body {
+    padding: 14px;
+}
+.content {
+    min-height: 400px;
+}
+.container {
+    opacity: 0;
+    @include transition(all 1.5s ease-in);
+    &.show {
+        opacity: 1;
+    }
+
+    width: 100%;
+    max-width: 320px;
+    margin-left: -160px;
+
+    height: $content-height;
+    margin-top: -($content-height/2);
+
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    h1 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    ul {
+        font-size: 14px;
+        overflow: hidden;
+        margin: 10px 0;
+    }
+    li {
+        display: inline-block;
+    }
+    em {
+        margin: 0 10px;
+        content: '';
+        display: inline-block;
+        border-top: 3px solid $main-color;
+        width: 3px;
+        height: 6px;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 14px;
+        &:before {
+            width: 50px;
+            height: 3px;
+            margin: 20px auto;
+            content: '.';
+            display: block;
+            color: $main-color;
+            background-color: $main-color;
+            overflow: hidden;
+        }
+    }
+    strong {
+        font-weight: 600;
+    }
+}
+.logo {
+    width: 300px;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+// Corner Marker --------------------------------
+$corner-size: 130px;
+.coming-soon {
+    width: $corner-size;
+    height: $corner-size;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    span {
+        width: 0;
+        height: 0;
+        border-top: $corner-size solid $main-color;
+        border-left: $corner-size solid transparent;
+        position: absolute;
+        top: 0; left:0;
+        z-index: 1;
+    }
+    .text {
+        @include transform(rotate(45deg));
+        position: absolute;
+        z-index: 2;
+        right: 6px;
+        top: 27px;
+    }
+    em, strong {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+    em {
+        font-size: 14px;
+    }
+}
+// Body Border ---------------------------------- 
+.border {
+	position: fixed;
+	z-index: -1;
+    top: 0; bottom: 0;
+    right: 0; left: 0;
+    background: url(../img/goldbg4.jpg) 100% 100%;
+    //background: $white;
+    &:before {
+    	background-color: $black;
+        display: block;
+        position: absolute;
+	    top: 0; bottom: 0;
+	    right: 0; left: 0;
+	    margin: 4px;
+		z-index: 1;
+		content: '';
+    }
+}
+
+.footer {
+    position: fixed;
+    padding: 20px;
+    bottom: 14px;
+    right: 0;
+    left: 0;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+}
+
+// Responsive ---------------------------------
+
+@media all and (min-width: 400px) {
+.container {
+    max-width: $content-width;
+    margin-left: -($content-width/2);
+    h1 {
+        font-size: 24px;
+    }
+    ul {
+        font-size: 16px;
+    }
+    p {
+        font-size: 16px;
+    }
+
+}
+
+
+
+}
